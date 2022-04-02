@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Budget Planner</title>
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <h1>Team Budget Planner</h1>
+    </header>
+
+    <div class="wrapper">
+      <div class="add-task-div">
+        <h1>Add Task</h1>
+
+        <form
+          id="add-task-form"
+          class="add-task-form"
+          onsubmit="addTask(event)"
+          autocomplete="off"
+        >
+          <!-- task name -->
+          <div class="form-field">
+            <label for="task-name">Task name :</label>
+            <input
+              type="text"
+              id="task-name"
+              placeholder="Enter task name"
+              required
+            />
+          </div>
+
+          <!-- task duration -->
+          <div class="form-field">
+            <label for="task-duration">Task duration (in hours) :</label>
+            <input
+              type="number"
+              step="any"
+              min="0"
+              id="task-duration"
+              placeholder="Enter task duration"
+              required
+              maxlength="3"
+            />
+          </div>
+
+          <!-- task duration/rupees rate -->
+          <div class="form-field">
+            <label for="task-rupees-per-duration-rate"
+              >Rupees/Duration rate :</label
+            >
+            <input
+              type="number"
+              step="any"
+              min="0"
+              id="task-rupees-per-duration-rate"
+              placeholder="Enter rupees/duration rate"
+              maxlength="10"
+              required
+            />
+          </div>
+
+          <!-- number of people -->
+          <div class="form-field">
+            <label for="task-no-of-people-involved"
+              >Number of people involved :</label
+            >
+            <input
+              type="number"
+              step="1"
+              min="1"
+              id="task-no-of-people-involved"
+              placeholder="Enter number of people involved"
+              required
+              maxlength="3"
+            />
+          </div>
+
+          <!-- add task button -->
+          <div class="form-field">
+            <input type="submit" value="Add Task" />
+          </div>
+        </form>
+      </div>
+      <div class="show-task-div">
+        <h1>All Task</h1>
+        <table class="task-table">
+          <thead>
+            <tr>
+              <td>Task name</td>
+              <td>Task duration (in hours)</td>
+              <td>Rupees/Duration rate</td>
+              <td>Number of people involved</td>
+              <td>Remove Task</td>
+            </tr>
+          </thead>
+          <tbody id="task-table-body"></tbody>
+        </table>
+        <div id="budget-info">
+          <p>Total Budget : <span id="total-budget"></span></p>
+          <p>Total Duration : <span id="total-duration"></span></p>
+          <p>Total people involved : <span id="total-people"></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

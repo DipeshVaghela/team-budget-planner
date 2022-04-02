@@ -1,0 +1,211 @@
+/* Local Font Family */
+@font-face {
+  font-family: "GR Medium";
+  src: url(../fonts/gotham-rounded/GothamRounded-Medium.otf);
+}
+@font-face {
+  font-family: "GR Light";
+  src: url(../fonts/gotham-rounded/GothamRounded-Light.otf);
+}
+@font-face {
+  font-family: "GR Bold";
+  src: url(../fonts/gotham-rounded/GothamRounded-Bold.otf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "GR Medium";
+}
+
+html {
+  font-size: calc(0.5rem + 0.525vw);
+  height: 100vh;
+}
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Header style */
+.header {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: blue;
+}
+
+.header h1 {
+  width: 100%;
+  font-family: "GR Bold";
+  font-size: 2em;
+  margin: 0px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  padding: 0em 2em;
+  color: white;
+  /* background-image: linear-gradient(90deg, blue, purple); */
+}
+
+/* Wrapper style */
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 90vh;
+  padding-top: 2em;
+}
+
+/* Add Task Section */
+.add-task-div {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 2em;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.add-task-div h1 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin: 0px;
+}
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+}
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+.form-field > label {
+  width: 50%;
+  font-family: "GR Bold";
+}
+
+.form-field > input {
+  width: 50%;
+  font-size: 1em;
+  font-family: "GR Light";
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+}
+
+.form-field > input:focus {
+  border: 2px solid blue;
+}
+.form-field:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 2em;
+}
+
+.form-field:last-child > input {
+  border: none;
+  background-color: blue;
+  color: white;
+  font-family: "GR Bold";
+  transition: all 0.5s ease-in-out;
+}
+.form-field:last-child > input:hover {
+  background-color: darkblue;
+}
+
+.show-task-div {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 2em;
+}
+
+/* Add Task Section */
+.show-task-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 60%;
+  padding: 2em;
+}
+
+.show-task-div h1 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin: 0px;
+}
+
+.task-table {
+  display: block;
+  margin-top: 2em;
+  border-collapse: collapse;
+  overflow-y: auto;
+}
+
+.task-table::-webkit-scrollbar-track {
+  display: none;
+}
+
+.task-table::-webkit-scrollbar-button {
+  display: none;
+}
+
+td {
+  padding: 0.5em 1em;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#task-table-body td {
+  font-family: "GR Light";
+}
+
+#budget-info {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#budget-info > p {
+  margin: 0em;
+}
+
+#budget-info > p > span {
+  font-family: "GR Bold";
+  color: blue;
+}
+
+@media all and (max-width: 600px) {
+  #budget-info {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #budget-info > p {
+    margin-bottom: 1em;
+  }
+}
+@media all and (max-width: 1000px) {
+  /* Wrapper style */
+  .wrapper {
+    flex-direction: column;
+  }
+  .add-task-div {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .show-task-div {
+    width: 100%;
+  }
+  .task-table {
+    margin: 2em auto 0em;
+  }
+}
